@@ -1,0 +1,38 @@
+[
+  {
+    "id": "black-highlighter",
+    "name": "Black Highlighter",
+    "repo": "Nu-SCPTheme/Black-Highlighter",
+    "branch": "master",
+    "sourceDirName": "Black-Highlighter",
+    "build": {
+      "css": "dist/css/black-highlighter.css",
+      "copy": [
+        "dist/img",
+        "dist/fonts"
+      ]
+    },
+    "description": "Imported from Nu-SCPTheme/Black-Highlighter"
+  },
+  {
+    "id": "basalt-bedrock",
+    "name": "Basalt Bedrock",
+    "repo": "Basalt-Team/Basalt",
+    "branch": "mega",
+    "sourceDirName": "Basalt",
+    "build": {
+      "css": "dist/basalt-bedrock.css",
+      "copy": [
+        "dist/fonts",
+        "dist/*.png",
+        "dist/*.jpg",
+        "dist/*.jpeg",
+        "dist/*.webp",
+        "dist/*.svg",
+        "dist/*.gif",
+        "dist/*.ico"
+      ]
+    },
+    "description": "Imported from Basalt-Team/Basalt (mega branch)"
+  }
+]
