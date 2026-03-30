@@ -1,0 +1,56 @@
+name: Pull and bundle SCP themes
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "30 6 * * 1"
+
+permissions:
+  contents: write
+
+jobs:
+  pull-themes:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out app repo
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Clone theme source repos
+        run: node scripts/clone-theme-sources.mjs
+
+      - name: Build Black Highlighter
+        working-directory: _sources/Black-Highlighter
+        run: |
+          npm install
+          npm run build
+
+      - name: Build Basalt
+        working-directory: _sources/Basalt
+        run: |
+          npm install
+          npm run build
+
+      - name: Import built themes into app
+        run: node scripts/import-themes.mjs
+
+      - name: Commit bundled theme updates
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+          git add themes
+          if git diff --cached --quiet; then
+            echo "No theme changes."
+            exit 0
+          fi
+
+          git commit -m "chore: refresh bundled themes"
+          git push
