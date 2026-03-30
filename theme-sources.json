@@ -34,5 +34,21 @@
       ]
     },
     "description": "Imported from Basalt-Team/Basalt (mega branch)"
+  },
+  {
+    "id": "sigma-10",
+    "name": "Sigma-10",
+    "repo": "scpwiki/sigma",
+    "branch": "main",
+    "sourceDirName": "sigma",
+    "build": {
+      "css": "dist/sigma.css",
+      "copy": [
+        "dist/fonts",
+        "dist/images"
+      ]
+    },
+    "description": "Imported from scpwiki/sigma",
+    "role": "base"
   }
 ]
