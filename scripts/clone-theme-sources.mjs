@@ -15,17 +15,16 @@ for (const cfg of configs) {
 
   fs.rmSync(targetDir, { recursive: true, force: true });
 
-  execFileSync(
-    "git",
-    [
-      "clone",
-      "--depth",
-      "1",
-      "--branch",
-      cfg.branch,
-      `https://github.com/${cfg.repo}.git`,
-      targetDir,
-    ],
-    { stdio: "inherit" }
-  );
+  const args = [
+    "clone",
+    "--depth",
+    "1",
+    "--branch",
+    cfg.branch,
+    `https://github.com/${cfg.repo}.git`,
+    targetDir
+  ];
+
+  console.log(`Cloning ${cfg.repo}#${cfg.branch} -> ${targetDir}`);
+  execFileSync("git", args, { stdio: "inherit" });
 }
