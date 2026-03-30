@@ -30,17 +30,23 @@ jobs:
         run: |
           curl -fsSL https://bun.sh/install | bash
           echo "$HOME/.bun/bin" >> $GITHUB_PATH
-  
+
+      - name: Build Sigma
+        working-directory: _sources/sigma
+        run: |
+          npm ci || npm install
+          npm run build
+
       - name: Build Black Highlighter
         working-directory: _sources/Black-Highlighter
         run: |
-          npm install
-          npm run build
+          bun install
+          make
 
       - name: Build Basalt
         working-directory: _sources/Basalt
         run: |
-          npm install
+          npm ci || npm install
           npm run build
 
       - name: Import built themes into app
@@ -51,7 +57,7 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
 
-          git add themes
+          git add sigma-main themes
           if git diff --cached --quiet; then
             echo "No theme changes."
             exit 0
