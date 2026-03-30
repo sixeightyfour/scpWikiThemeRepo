@@ -26,6 +26,11 @@ jobs:
       - name: Clone theme source repos
         run: node scripts/clone-theme-sources.mjs
 
+      - name: Install bun
+        run: |
+          curl -fsSL https://bun.sh/install | bash
+          echo "$HOME/.bun/bin" >> $GITHUB_PATH
+  
       - name: Build Black Highlighter
         working-directory: _sources/Black-Highlighter
         run: |
