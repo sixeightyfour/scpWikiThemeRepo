@@ -1,0 +1,16 @@
+[
+  {
+    "id": "black-highlighter",
+    "name": "Black Highlighter",
+    "css": "theme.css",
+    "description": "Imported from Nu-SCPTheme/Black-Highlighter",
+    "mode": "overlay"
+  },
+  {
+    "id": "basalt-bedrock",
+    "name": "Basalt Bedrock",
+    "css": "theme.css",
+    "description": "Imported from Basalt-Team/Basalt (mega branch)",
+    "mode": "overlay"
+  }
+]
