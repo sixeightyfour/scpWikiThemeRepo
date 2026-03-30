@@ -1,10 +1,27 @@
 [
   {
+    "id": "sigma-10",
+    "name": "Sigma-10",
+    "repo": "scpwiki/sigma",
+    "branch": "main",
+    "sourceDirName": "sigma",
+    "role": "base",
+    "build": {
+      "css": "dist/sigma.css",
+      "copy": [
+        "dist/fonts",
+        "dist/images"
+      ]
+    },
+    "description": "Imported from scpwiki/sigma"
+  },
+  {
     "id": "black-highlighter",
     "name": "Black Highlighter",
     "repo": "Nu-SCPTheme/Black-Highlighter",
     "branch": "master",
     "sourceDirName": "Black-Highlighter",
+    "role": "overlay",
     "build": {
       "css": "dist/css/black-highlighter.css",
       "copy": [
@@ -20,35 +37,15 @@
     "repo": "Basalt-Team/Basalt",
     "branch": "mega",
     "sourceDirName": "Basalt",
+    "role": "overlay",
     "build": {
       "css": "dist/basalt-bedrock.css",
       "copy": [
         "dist/fonts",
-        "dist/*.png",
-        "dist/*.jpg",
-        "dist/*.jpeg",
-        "dist/*.webp",
-        "dist/*.svg",
-        "dist/*.gif",
-        "dist/*.ico"
+        "dist/images",
+        "dist/misc"
       ]
     },
     "description": "Imported from Basalt-Team/Basalt (mega branch)"
-  },
-  {
-    "id": "sigma-10",
-    "name": "Sigma-10",
-    "repo": "scpwiki/sigma",
-    "branch": "main",
-    "sourceDirName": "sigma",
-    "build": {
-      "css": "dist/sigma.css",
-      "copy": [
-        "dist/fonts",
-        "dist/images"
-      ]
-    },
-    "description": "Imported from scpwiki/sigma",
-    "role": "base"
   }
 ]
